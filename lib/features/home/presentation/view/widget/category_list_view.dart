@@ -6,15 +6,18 @@ class CategoryListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 120,
-      child: ListView.builder(
-        clipBehavior: Clip.none,
-        scrollDirection: Axis.horizontal,
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return const CategoryItem();
-        },
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 13.0),
+      child: SizedBox(
+        height: 110,
+        child: ListView.builder(
+          clipBehavior: Clip.none,
+          scrollDirection: Axis.horizontal,
+          itemCount: 5,
+          itemBuilder: (context, index) {
+            return const CategoryItem();
+          },
+        ),
       ),
     );
   }

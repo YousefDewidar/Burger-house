@@ -1,6 +1,7 @@
 import 'package:burger_house/core/utils/styles.dart';
 import 'package:burger_house/features/auth/search_text_field.dart';
 import 'package:burger_house/features/home/presentation/view/widget/category_list_view.dart';
+import 'package:burger_house/features/home/presentation/view/widget/offer_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -9,7 +10,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 28.0),
+      padding: const EdgeInsets.symmetric(horizontal: 24.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -17,9 +18,9 @@ class HomeViewBody extends StatelessWidget {
           const SearchTextField(),
           const CategoryListView(),
           const Text('Promotions', style: Styles.style24),
+          const OfferCard()
         ],
       ),
     );
   }
 }
-
