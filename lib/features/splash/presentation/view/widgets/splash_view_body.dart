@@ -1,4 +1,6 @@
 import 'package:burger_house/features/auth/presentation/view/login_view.dart';
+import 'package:burger_house/features/home/presentation/view/home_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -24,8 +26,30 @@ class _SplashViewBodyState extends State<SplashViewBody>
     animationController.forward();
 
     Future.delayed(const Duration(seconds: 2), () {
-      Get.off(const LoginView(),transition: Transition.upToDown);
+      Get.off(
+        () => getPageDueToUser(),
+        transition: Transition.upToDown,
+      );
     });
+  }
+
+  StreamBuilder<User?> getPageDueToUser() {
+    return StreamBuilder(
+      stream: FirebaseAuth.instance.userChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return const HomeView();
+        } else {
+          return const LoginView();
+        }
+      },
+    );
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   @override

@@ -75,11 +75,9 @@ class _LoginFormState extends State<LoginForm> {
                     text: 'login',
                     color: kPrimaryColor,
                   ),
-
             const SizedBox(
               height: 15,
             ),
-
             // create acc
             CustomButton(
               text: 'Create Account',
@@ -98,6 +96,7 @@ class _LoginFormState extends State<LoginForm> {
         isLoading = true;
         setState(() {});
         await signInMethod();
+        setState(() {});
       } on FirebaseAuthException catch (e) {
         HelperFun().handleAuthErrors(e, context);
       }
