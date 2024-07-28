@@ -1,5 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:burger_house/core/constant.dart';
+import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/utils/helper/functions.dart';
 import 'package:burger_house/core/utils/widgets/password_field.dart';
 import 'package:burger_house/features/auth/presentation/view/widgets/custom_button.dart';

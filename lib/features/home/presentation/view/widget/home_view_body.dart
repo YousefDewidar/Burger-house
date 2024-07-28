@@ -1,4 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:burger_house/core/utils/styles.dart';
+import 'package:burger_house/features/auth/search_text_field.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -6,10 +7,11 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: TextButton(onPressed: () {
-        FirebaseAuth.instance.signOut();
-      }, child: const Text('Click'), ),
+    return Column(
+      children: [
+        Text('Menu', style: Styles.style24.copyWith(fontSize: 42)),
+        const SearchTextField(),
+      ],
     );
   }
 }

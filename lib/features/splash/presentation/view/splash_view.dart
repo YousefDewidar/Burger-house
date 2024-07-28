@@ -1,4 +1,4 @@
-import 'package:burger_house/core/constant.dart';
+import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/features/splash/presentation/view/widgets/splash_view_body.dart';
 import 'package:flutter/material.dart';
 

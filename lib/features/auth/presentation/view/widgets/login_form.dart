@@ -1,4 +1,4 @@
-import 'package:burger_house/core/constant.dart';
+import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/utils/helper/functions.dart';
 import 'package:burger_house/core/utils/widgets/password_field.dart';
 import 'package:burger_house/features/auth/presentation/view/forget_pass_view.dart';

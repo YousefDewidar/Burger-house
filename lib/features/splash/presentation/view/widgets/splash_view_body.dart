@@ -28,7 +28,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(const Duration(seconds: 2), () {
       Get.off(
         () => getPageDueToUser(),
-        transition: Transition.upToDown,
+        transition: Transition.fade,
       );
     });
   }
