@@ -7,7 +7,11 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(child: HomeViewBody()),
+      body: SafeArea(
+        top: false,
+        minimum: EdgeInsets.only(top: 30),
+        child: HomeViewBody(),
+      ),
     );
   }
 }
