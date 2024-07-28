@@ -1,4 +1,3 @@
-import 'package:burger_house/core/utils/constant.dart';
 import 'package:flutter/material.dart';
 
 import 'offer_content.dart';
@@ -11,15 +10,16 @@ class OfferCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 5,bottom: 15),
       padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
-      height: 130,
+      height: 150,
       width: double.infinity,
       decoration: BoxDecoration(
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                kPrimaryColor,
-                kPrimaryColor.withAlpha(210),
+                Color(0xff9577F2),
+                Color(0xffA085F7),
+                
               ]),
           borderRadius: BorderRadius.circular(20)),
       child: const OfferContent(),
