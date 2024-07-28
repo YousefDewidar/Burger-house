@@ -16,7 +16,7 @@ class CategoryItem extends StatelessWidget {
             height: 80,
             width: 80,
             decoration: BoxDecoration(
-              color: const Color(0xffEFEEEE),
+              color: const Color.fromARGB(255, 234, 232, 232),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Image.asset('assets/images/burger_sandwich 1.png'),

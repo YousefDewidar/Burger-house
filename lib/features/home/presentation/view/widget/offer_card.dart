@@ -9,7 +9,7 @@ class OfferCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 4),
+      margin: const EdgeInsets.only(top: 5,bottom: 15),
       padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
       height: 130,
       width: double.infinity,
