@@ -1,5 +1,6 @@
 import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/features/home/presentation/view/home_view.dart';
+import 'package:burger_house/features/home/presentation/view/widget/hello_row.dart';
 import 'package:burger_house/features/menu/presentation/view/menu_view.dart';
 import 'package:burger_house/features/profile/presentation/view/profile_view.dart';
 import 'package:flutter/material.dart';
@@ -17,18 +18,19 @@ class _AllViewsPageViewState extends State<AllViewsPageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: kBackgroundColor,
+        toolbarHeight: 100,
+        title: const HelloRow(),
+      ),
       backgroundColor: kBackgroundColor,
-      body: SafeArea(
-        top: false,
-        minimum: const EdgeInsets.only(top: 35),
-        child: PageView(
-          controller: pageCon,
-          onPageChanged: (value) {
-            curInd = value;
-            setState(() {});
-          },
-          children: const [HomeView(), MenuView(), ProfileView()],
-        ),
+      body: PageView(
+        controller: pageCon,
+        onPageChanged: (value) {
+          curInd = value;
+          setState(() {});
+        },
+        children: const [HomeView(), MenuView(), ProfileView()],
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: curInd,
