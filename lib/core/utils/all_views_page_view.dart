@@ -1,6 +1,7 @@
 import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/features/home/presentation/view/home_view.dart';
 import 'package:burger_house/features/menu/presentation/view/menu_view.dart';
+import 'package:burger_house/features/profile/presentation/view/profile_view.dart';
 import 'package:flutter/material.dart';
 
 class AllViewsPageView extends StatefulWidget {
@@ -26,13 +27,9 @@ class _AllViewsPageViewState extends State<AllViewsPageView> {
             curInd = value;
             setState(() {});
           },
-          children: const [
-            HomeView(),
-            MenuView(),
-          ],
+          children: const [HomeView(), MenuView(), ProfileView()],
         ),
       ),
-    
       bottomNavigationBar: NavigationBar(
         selectedIndex: curInd,
         indicatorColor: kPrimaryColor.withOpacity(.2),
