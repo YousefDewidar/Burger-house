@@ -45,7 +45,8 @@ class HelloRow extends StatelessWidget {
                     style: TextStyle(color: kPrimaryColor.withOpacity(.7))))
           ],
         ),
-        const Divider(),
+        const SpaceV(12),
+        const Divider(height: 0),
       ],
     );
   }

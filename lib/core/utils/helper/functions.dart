@@ -20,6 +20,7 @@ class HelperFun {
 
   showAwesomeDialog(BuildContext context, String message,
       {required DialogType type}) {
+    
     AwesomeDialog(
             context: context,
             dialogType: type,

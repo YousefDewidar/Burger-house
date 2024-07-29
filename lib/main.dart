@@ -1,12 +1,14 @@
 import 'package:burger_house/features/home/presentation/view/home_view.dart';
+import 'package:burger_house/features/splash/presentation/view/splash_view.dart';
 import 'package:burger_house/firebase_options.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp( const BurgerHouseApp());
+  runApp(DevicePreview(builder: (context) => const BurgerHouseApp()));
 }
 
 class BurgerHouseApp extends StatelessWidget {

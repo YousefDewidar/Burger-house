@@ -8,7 +8,6 @@ class PopularCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 214,
       width: 161,
       decoration: BoxDecoration(
         color: kGreyColor,
