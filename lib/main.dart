@@ -1,5 +1,4 @@
-import 'package:burger_house/features/home/presentation/view/home_view.dart';
-import 'package:burger_house/features/splash/presentation/view/splash_view.dart';
+import 'package:burger_house/core/utils/all_views_page_view.dart';
 import 'package:burger_house/firebase_options.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -18,7 +17,7 @@ class BurgerHouseApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeView(),
+      home: AllViewsPageView(),
     );
   }
 }

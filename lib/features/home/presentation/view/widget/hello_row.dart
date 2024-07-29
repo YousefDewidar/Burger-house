@@ -1,6 +1,7 @@
 import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/utils/styles.dart';
 import 'package:burger_house/core/utils/widgets/space.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HelloRow extends StatelessWidget {
@@ -14,9 +15,19 @@ class HelloRow extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Hello',
-            style: Styles.style22
-                .copyWith(fontSize: 34, fontWeight: FontWeight.w600)),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('Hello',
+                style: Styles.style22
+                    .copyWith(fontSize: 34, fontWeight: FontWeight.w600)),
+            IconButton(
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                },
+                icon: const Icon(Icons.sports_handball_outlined))
+          ],
+        ),
         const SpaceV(10),
         Row(
           children: [
