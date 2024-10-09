@@ -1,4 +1,4 @@
-import 'package:burger_house/core/utils/constant.dart';
+import 'package:burger_house/core/utils/helper/constant.dart';
 import 'package:burger_house/core/utils/helper/functions.dart';
 import 'package:burger_house/core/utils/widgets/space.dart';
 import 'package:burger_house/features/auth/ui/widgets/custom_button.dart';
@@ -46,7 +46,7 @@ class _ForgetViewBodyState extends State<ForgetViewBody> {
             onPressed: () async {
               await resetPassword(context);
             },
-            color: kPrimaryColor,
+            color: Constant.kPrimaryColor,
           )
         ],
       ),

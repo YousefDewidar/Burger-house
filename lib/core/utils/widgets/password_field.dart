@@ -1,4 +1,4 @@
-import 'package:burger_house/core/utils/constant.dart';
+import 'package:burger_house/core/utils/helper/constant.dart';
 import 'package:flutter/material.dart';
 
 class PasswordField extends StatefulWidget {
@@ -29,7 +29,7 @@ class _PasswordFieldState extends State<PasswordField> {
       decoration: InputDecoration(
           prefixIcon: const Icon(
             Icons.password,
-            color: kPrimaryColor,
+            color: Constant.kPrimaryColor,
           ),
           suffixIcon: IconButton(
             onPressed: () {
@@ -43,10 +43,10 @@ class _PasswordFieldState extends State<PasswordField> {
           contentPadding: const EdgeInsets.all(17),
           labelText: 'Password',
           floatingLabelStyle:
-              const TextStyle(fontSize: 18, color: kPrimaryColor),
+              const TextStyle(fontSize: 18, color: Constant.kPrimaryColor),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: kPrimaryColor)),
+              borderSide: const BorderSide(color: Constant.kPrimaryColor)),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12))),
     );
   }

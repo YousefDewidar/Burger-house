@@ -1,9 +1,8 @@
-import 'package:burger_house/core/utils/all_views_page_view.dart';
+import 'package:burger_house/core/utils/widgets/all_views_page_view.dart';
 import 'package:burger_house/features/auth/ui/login_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/get_core.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -26,9 +25,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
     animationController.forward();
 
     Future.delayed(const Duration(seconds: 2), () {
-      Get.off(
-        () => getPageDueToUser(),
-        transition: Transition.fade,
+      Navigator.push(
+        context,
+        PageTransition(
+          type: PageTransitionType.rightToLeft,
+          child: getPageDueToUser(),
+        ),
       );
     });
   }

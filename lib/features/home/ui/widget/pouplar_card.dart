@@ -1,4 +1,4 @@
-import 'package:burger_house/core/utils/constant.dart';
+import 'package:burger_house/core/utils/helper/constant.dart';
 import 'package:burger_house/features/home/ui/widget/add_item_row.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +10,7 @@ class PopularCard extends StatelessWidget {
     return Container(
       width: 161,
       decoration: BoxDecoration(
-        color: kGreyColor,
+        color: Constant.kGreyColor,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(

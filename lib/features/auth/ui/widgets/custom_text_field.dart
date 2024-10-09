@@ -1,4 +1,4 @@
-import 'package:burger_house/core/utils/constant.dart';
+import 'package:burger_house/core/utils/helper/constant.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -28,14 +28,14 @@ class CustomTextField extends StatelessWidget {
     return InputDecoration(
         prefixIcon: Icon(
           icon,
-          color: kPrimaryColor,
+          color: Constant.kPrimaryColor,
         ),
         contentPadding: const EdgeInsets.all(17),
         labelText: label,
-        floatingLabelStyle: const TextStyle(fontSize: 18, color: kPrimaryColor),
+        floatingLabelStyle: const TextStyle(fontSize: 18, color: Constant.kPrimaryColor),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: kPrimaryColor)),
+            borderSide: const BorderSide(color: Constant.kPrimaryColor)),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)));
   }
 

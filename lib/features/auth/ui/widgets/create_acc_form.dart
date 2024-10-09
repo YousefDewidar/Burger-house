@@ -1,4 +1,4 @@
-import 'package:burger_house/core/utils/constant.dart';
+import 'package:burger_house/core/utils/helper/constant.dart';
 import 'package:burger_house/core/utils/helper/functions.dart';
 import 'package:burger_house/core/utils/widgets/password_field.dart';
 import 'package:burger_house/features/auth/ui/widgets/custom_button.dart';
@@ -59,7 +59,7 @@ class _CreateAccFormState extends State<CreateAccForm> {
                 await registerLogic(context);
               },
               text: 'Register',
-              color: kPrimaryColor,
+              color: Constant.kPrimaryColor,
             ),
           ],
         ));

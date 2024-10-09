@@ -1,4 +1,4 @@
-import 'package:burger_house/core/utils/constant.dart';
+import 'package:burger_house/core/utils/helper/constant.dart';
 import 'package:burger_house/core/utils/styles.dart';
 import 'package:burger_house/core/utils/widgets/space.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -34,7 +34,7 @@ class HelloRow extends StatelessWidget {
             const Icon(
               size: 35,
               Icons.location_on_sharp,
-              color: kPrimaryColor,
+              color: Constant.kPrimaryColor,
             ),
             const SpaceH(10),
             const Column(
@@ -43,7 +43,7 @@ class HelloRow extends StatelessWidget {
                 Text('Delivery to',
                     style: TextStyle(
                         fontSize: 14,
-                        color: kPrimaryColor,
+                        color: Constant.kPrimaryColor,
                         fontWeight: FontWeight.w500)),
                 Text('Tanta Center,Tanta',
                     style: TextStyle(fontSize: 18, height: 1)),
@@ -53,7 +53,8 @@ class HelloRow extends StatelessWidget {
             TextButton(
                 onPressed: () {},
                 child: Text('change',
-                    style: TextStyle(color: kPrimaryColor.withOpacity(.7))))
+                    style: TextStyle(
+                        color: Constant.kPrimaryColor.withOpacity(.7))))
           ],
         ),
         const SpaceV(12),

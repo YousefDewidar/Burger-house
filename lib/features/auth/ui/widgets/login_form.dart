@@ -1,4 +1,4 @@
-import 'package:burger_house/core/utils/constant.dart';
+import 'package:burger_house/core/utils/helper/constant.dart';
 import 'package:burger_house/core/utils/helper/functions.dart';
 import 'package:burger_house/core/utils/widgets/password_field.dart';
 import 'package:burger_house/features/auth/ui/forget_pass_view.dart';
@@ -7,8 +7,7 @@ import 'package:burger_house/features/auth/ui/widgets/custom_button.dart';
 import 'package:burger_house/features/auth/ui/widgets/custom_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/get_core.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:page_transition/page_transition.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -50,8 +49,15 @@ class _LoginFormState extends State<LoginForm> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 TextButton(
-                  onPressed: () => Get.to(const ForgetPassView(),
-                      transition: Transition.rightToLeft),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const ForgetPassView(),
+                      ),
+                    );
+                  },
                   child: Text(
                     'Forget password?',
                     textAlign: TextAlign.end,
@@ -73,7 +79,7 @@ class _LoginFormState extends State<LoginForm> {
                       await loginLogic(context);
                     },
                     text: 'login',
-                    color: kPrimaryColor,
+                    color: Constant.kPrimaryColor,
                   ),
             const SizedBox(
               height: 15,
@@ -82,7 +88,13 @@ class _LoginFormState extends State<LoginForm> {
             CustomButton(
               text: 'Create Account',
               onPressed: () {
-                Get.to(const SignupView(), transition: Transition.rightToLeft);
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.rightToLeft,
+                    child: const SignupView(),
+                  ),
+                );
               },
               color: Theme.of(context).colorScheme.onSecondary,
             ),
