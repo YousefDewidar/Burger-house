@@ -1,4 +1,4 @@
-import 'package:burger_house/core/utils/helper/constant.dart';
+import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/utils/widgets/widget_with_background.dart';
 import 'package:burger_house/features/auth/ui/widgets/login_form.dart';
 import 'package:flutter/material.dart';

@@ -1,5 +1,5 @@
-import 'package:burger_house/core/utils/helper/constant.dart';
-import 'package:burger_house/core/utils/helper/functions.dart';
+import 'package:burger_house/core/utils/constant.dart';
+import 'package:burger_house/core/helper/functions.dart';
 import 'package:burger_house/core/utils/widgets/space.dart';
 import 'package:burger_house/features/auth/ui/widgets/custom_button.dart';
 import 'package:burger_house/features/auth/ui/widgets/custom_text_field.dart';

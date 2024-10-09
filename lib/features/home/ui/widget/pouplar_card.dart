@@ -1,4 +1,4 @@
-import 'package:burger_house/core/utils/helper/constant.dart';
+import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/features/home/ui/widget/add_item_row.dart';
 import 'package:flutter/material.dart';
 

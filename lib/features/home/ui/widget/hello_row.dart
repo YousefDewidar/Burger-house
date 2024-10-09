@@ -1,4 +1,4 @@
-import 'package:burger_house/core/utils/helper/constant.dart';
+import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/utils/styles.dart';
 import 'package:burger_house/core/utils/widgets/space.dart';
 import 'package:firebase_auth/firebase_auth.dart';

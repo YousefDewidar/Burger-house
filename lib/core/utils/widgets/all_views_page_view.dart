@@ -1,4 +1,4 @@
-import 'package:burger_house/core/utils/helper/constant.dart';
+import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/features/home/ui/home_view.dart';
 import 'package:burger_house/features/home/ui/widget/hello_row.dart';
 import 'package:burger_house/features/menu/ui/menu_view.dart';

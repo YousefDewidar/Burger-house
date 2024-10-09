@@ -4,6 +4,7 @@ class CustomButton extends StatelessWidget {
   final String text;
   final void Function() onPressed;
   final Color color;
+
   const CustomButton({
     super.key,
     required this.text,

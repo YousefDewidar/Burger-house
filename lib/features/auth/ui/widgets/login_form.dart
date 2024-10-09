@@ -1,5 +1,5 @@
-import 'package:burger_house/core/utils/helper/constant.dart';
-import 'package:burger_house/core/utils/helper/functions.dart';
+import 'package:burger_house/core/utils/constant.dart';
+import 'package:burger_house/core/helper/functions.dart';
 import 'package:burger_house/core/utils/widgets/password_field.dart';
 import 'package:burger_house/features/auth/ui/forget_pass_view.dart';
 import 'package:burger_house/features/auth/ui/signup_view.dart';
