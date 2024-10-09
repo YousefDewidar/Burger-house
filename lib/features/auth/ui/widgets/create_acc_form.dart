@@ -1,9 +1,8 @@
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/utils/helper/functions.dart';
 import 'package:burger_house/core/utils/widgets/password_field.dart';
-import 'package:burger_house/features/auth/presentation/view/widgets/custom_button.dart';
-import 'package:burger_house/features/auth/presentation/view/widgets/custom_text_field.dart';
+import 'package:burger_house/features/auth/ui/widgets/custom_button.dart';
+import 'package:burger_house/features/auth/ui/widgets/custom_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -70,8 +69,7 @@ class _CreateAccFormState extends State<CreateAccForm> {
     if (formKey.currentState!.validate()) {
       try {
         await register(emailCon, passwordCon);
-        HelperFun().showAwesomeDialog(context, 'CreatedDone',
-            type: DialogType.success);
+        HelperFun().showAwesomeDialog(context, 'CreatedDone');
         // Navigator.pop(context);
       } on FirebaseAuthException catch (e) {
         HelperFun().handleAuthErrors(e, context);

@@ -1,4 +1,4 @@
-import 'package:burger_house/features/home/presentation/view/widget/category_item.dart';
+import 'package:burger_house/features/home/ui/widget/category_item.dart';
 import 'package:flutter/material.dart';
 
 class CategoryListView extends StatelessWidget {

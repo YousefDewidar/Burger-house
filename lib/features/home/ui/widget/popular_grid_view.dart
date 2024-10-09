@@ -1,4 +1,4 @@
-import 'package:burger_house/features/home/presentation/view/widget/pouplar_card.dart';
+import 'package:burger_house/features/home/ui/widget/pouplar_card.dart';
 import 'package:flutter/material.dart';
 
 class PopularGridView extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:burger_house/core/utils/constant.dart';
-import 'package:burger_house/features/home/presentation/view/home_view.dart';
-import 'package:burger_house/features/home/presentation/view/widget/hello_row.dart';
-import 'package:burger_house/features/menu/presentation/view/menu_view.dart';
-import 'package:burger_house/features/profile/presentation/view/profile_view.dart';
+import 'package:burger_house/features/home/ui/home_view.dart';
+import 'package:burger_house/features/home/ui/widget/hello_row.dart';
+import 'package:burger_house/features/menu/ui/menu_view.dart';
+import 'package:burger_house/features/profile/ui/view/profile_view.dart';
 import 'package:flutter/material.dart';
 
 class AllViewsPageView extends StatefulWidget {
@@ -43,8 +43,7 @@ class _AllViewsPageViewState extends State<AllViewsPageView> {
         },
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(
-              icon: Icon(Icons.widgets_outlined), label: 'Menu'),
+          NavigationDestination(icon: Icon(Icons.now_widgets_outlined), label: 'Menu'),
           NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),

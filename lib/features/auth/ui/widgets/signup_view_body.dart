@@ -1,4 +1,4 @@
-import 'package:burger_house/features/auth/presentation/view/widgets/create_acc_form.dart';
+import 'package:burger_house/features/auth/ui/widgets/create_acc_form.dart';
 import 'package:flutter/material.dart';
 
 class SignupViewBody extends StatelessWidget {

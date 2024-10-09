@@ -1,5 +1,5 @@
 
-import 'package:burger_house/features/home/presentation/view/widget/offer_card.dart';
+import 'package:burger_house/features/home/ui/widget/offer_card.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 

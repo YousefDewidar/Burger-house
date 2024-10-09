@@ -1,5 +1,5 @@
 import 'package:burger_house/core/utils/constant.dart';
-import 'package:burger_house/features/home/presentation/view/widget/add_item_row.dart';
+import 'package:burger_house/features/home/ui/widget/add_item_row.dart';
 import 'package:flutter/material.dart';
 
 class PopularCard extends StatelessWidget {

@@ -1,5 +1,5 @@
-import 'package:burger_house/features/auth/presentation/view/login_view.dart';
-import 'package:burger_house/features/home/presentation/view/home_view.dart';
+import 'package:burger_house/core/utils/all_views_page_view.dart';
+import 'package:burger_house/features/auth/ui/login_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
@@ -38,7 +38,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       stream: FirebaseAuth.instance.userChanges(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return const HomeView();
+          return const AllViewsPageView();
         } else {
           return const LoginView();
         }

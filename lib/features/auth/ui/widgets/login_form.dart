@@ -1,10 +1,10 @@
 import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/utils/helper/functions.dart';
 import 'package:burger_house/core/utils/widgets/password_field.dart';
-import 'package:burger_house/features/auth/presentation/view/forget_pass_view.dart';
-import 'package:burger_house/features/auth/presentation/view/signup_view.dart';
-import 'package:burger_house/features/auth/presentation/view/widgets/custom_button.dart';
-import 'package:burger_house/features/auth/presentation/view/widgets/custom_text_field.dart';
+import 'package:burger_house/features/auth/ui/forget_pass_view.dart';
+import 'package:burger_house/features/auth/ui/signup_view.dart';
+import 'package:burger_house/features/auth/ui/widgets/custom_button.dart';
+import 'package:burger_house/features/auth/ui/widgets/custom_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';

@@ -1,4 +1,4 @@
-import 'package:burger_house/features/home/presentation/view/widget/home_view_body.dart';
+import 'package:burger_house/features/home/ui/widget/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {

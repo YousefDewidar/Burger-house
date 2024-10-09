@@ -1,9 +1,8 @@
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/utils/helper/functions.dart';
 import 'package:burger_house/core/utils/widgets/space.dart';
-import 'package:burger_house/features/auth/presentation/view/widgets/custom_button.dart';
-import 'package:burger_house/features/auth/presentation/view/widgets/custom_text_field.dart';
+import 'package:burger_house/features/auth/ui/widgets/custom_button.dart';
+import 'package:burger_house/features/auth/ui/widgets/custom_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -58,10 +57,10 @@ class _ForgetViewBodyState extends State<ForgetViewBody> {
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: emailCon.text);
       HelperFun().showAwesomeDialog(context, 'Email sent check your mail',
-          type: DialogType.success);
+          );
     } catch (e) {
       HelperFun()
-          .showAwesomeDialog(context, 'Invalid Email', type: DialogType.error);
+          .showAwesomeDialog(context, 'Invalid Email');
     }
   }
 }

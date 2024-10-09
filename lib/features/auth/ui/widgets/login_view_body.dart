@@ -1,5 +1,5 @@
 import 'package:burger_house/core/utils/constant.dart';
-import 'package:burger_house/features/auth/presentation/view/widgets/login_form.dart';
+import 'package:burger_house/features/auth/ui/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 
 class LoginViewBody extends StatelessWidget {

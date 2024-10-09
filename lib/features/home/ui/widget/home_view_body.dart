@@ -1,7 +1,7 @@
 import 'package:burger_house/core/utils/styles.dart';
 import 'package:burger_house/core/utils/widgets/space.dart';
-import 'package:burger_house/features/home/presentation/view/widget/offer_slider_list_view.dart';
-import 'package:burger_house/features/home/presentation/view/widget/popular_grid_view.dart';
+import 'package:burger_house/features/home/ui/widget/offer_slider_list_view.dart';
+import 'package:burger_house/features/home/ui/widget/popular_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

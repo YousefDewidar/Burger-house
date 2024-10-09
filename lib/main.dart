@@ -1,13 +1,12 @@
-import 'package:burger_house/core/utils/all_views_page_view.dart';
-import 'package:burger_house/firebase_options.dart';
-import 'package:device_preview/device_preview.dart';
+import 'package:burger_house/features/auth/ui/login_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() async {
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(DevicePreview(builder: (context) => const BurgerHouseApp()));
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const BurgerHouseApp());
 }
 
 class BurgerHouseApp extends StatelessWidget {
@@ -17,7 +16,7 @@ class BurgerHouseApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AllViewsPageView(),
+      home: LoginView(),
     );
   }
 }
