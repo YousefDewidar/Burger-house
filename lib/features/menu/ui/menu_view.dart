@@ -1,4 +1,6 @@
-import 'package:burger_house/features/menu/ui/widgets/menu_view_body.dart';
+import 'package:burger_house/core/utils/widgets/space.dart';
+import 'package:burger_house/features/menu/ui/widgets/category_list_view.dart';
+import 'package:burger_house/features/menu/ui/widgets/products_list_view.dart';
 import 'package:flutter/material.dart';
 
 class MenuView extends StatelessWidget {
@@ -6,9 +8,31 @@ class MenuView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.0),
-      child: MenuViewBody(),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Column(
+        children: [
+          const SpaceV(50),
+          Text(
+            'Menu Sections'.toUpperCase(),
+            style: const TextStyle(
+              color: Colors.black,
+              fontSize: 25,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const CategoryListView(),
+          Text(
+            'Beef Burger'.toUpperCase(),
+            style: const TextStyle(
+              color: Colors.black,
+              fontSize: 25,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const ProductsListView(),
+        ],
+      ),
     );
   }
 }

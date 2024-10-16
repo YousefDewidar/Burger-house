@@ -35,6 +35,23 @@ class Database {
     return filterList;
   }
 
+  static Future<List<ItemModel>> getProductsByCategory({
+    required String category,
+  }) async {
+    List<ItemModel> filterList = [];
+
+    await _firestore
+        .collection(Constant.menuColName)
+        .where('category', isEqualTo: category)
+        .get()
+        .then((val) {
+      for (var item in val.docs) {
+        filterList.add(ItemModel.formJson(item.data()));
+      }
+    });
+    return filterList;
+  }
+
 // get all products
   static Future<List<ItemModel>> getAllProduct() async {
     List<ItemModel> filterList = [];
