@@ -55,7 +55,11 @@ class Database {
 // get all products
   static Future<List<ItemModel>> getAllProduct() async {
     List<ItemModel> filterList = [];
-    await _firestore.collection(Constant.menuColName).get().then((val) {
+    await _firestore
+        .collection(Constant.menuColName)
+        .orderBy('id', descending: false)
+        .get()
+        .then((val) {
       for (var item in val.docs) {
         filterList.add(ItemModel.formJson(item.data()));
       }

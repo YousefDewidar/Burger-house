@@ -19,22 +19,19 @@ class HomeView extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Expanded(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            scrollDirection: Axis.vertical,
-            children: const [
-              SpaceV(10),
-              Text('Hot offers', style: Styles.style22),
-              OfferSliderListView(),
-              SpaceV(15),
-              // SearchTextField(),
-              // CategoryListView(),
-              Text('Popular', style: Styles.style22),
-              SpaceV(13),
-              PopularGridView()
-            ],
-          ),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          scrollDirection: Axis.vertical,
+          children: const [
+            SpaceV(10),
+            Text('Hot offers', style: Styles.style22),
+            OfferSliderListView(),
+            SpaceV(15),
+            // SearchTextField(),
+            Text('Popular', style: Styles.style22),
+            SpaceV(13),
+            PopularGridView()
+          ],
         ),
       ),
     );

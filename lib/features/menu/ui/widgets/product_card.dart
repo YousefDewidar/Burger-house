@@ -38,9 +38,10 @@ class ProductCard extends StatelessWidget {
                 width: 170,
                 child: Text(
                   item.ingredients
-                      .toString()
-                      .substring(1, item.ingredients.toString().length - 1)
-                      .replaceAll(',', ' +'),
+                          ?.toString()
+                          .substring(1, item.ingredients.toString().length - 1)
+                          .replaceAll(',', ' +') ??
+                      '',
                   textDirection: TextDirection.rtl,
                   maxLines: 3,
                   style: const TextStyle(
@@ -64,25 +65,27 @@ class ProductCard extends StatelessWidget {
                             Text(
                               '${item.price['s']}',
                               style: const TextStyle(
-                                  color: Color(0xffC9AA05),
+                                  color: Color(0xFF000000),
                                   fontSize: 18,
                                   fontWeight: FontWeight.w600),
                             ),
                           ],
                         ),
                   const SpaceH(25),
-                  const CircleAvatar(
-                    backgroundColor: Colors.green,
-                    foregroundColor: Colors.white,
-                    radius: 12,
-                    child: Text('D'),
-                  ),
+                  item.price['s'] == null
+                      ? const SizedBox()
+                      : const CircleAvatar(
+                          backgroundColor: Colors.green,
+                          foregroundColor: Colors.white,
+                          radius: 12,
+                          child: Text('D'),
+                        ),
                   const SpaceH(5),
                   Text(
                     '${item.price['d']}',
-                    style: const TextStyle(
-                        color: Color(0xffC9AA05),
-                        fontSize: 18,
+                    style: TextStyle(
+                        color: const Color(0xFF000000),
+                        fontSize: item.price['s'] == null ? 22 : 18,
                         fontWeight: FontWeight.w600),
                   ),
                 ],

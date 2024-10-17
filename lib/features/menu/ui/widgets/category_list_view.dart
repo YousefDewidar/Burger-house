@@ -1,5 +1,7 @@
+import 'package:burger_house/features/menu/logic/cubit/menu_cubit.dart';
 import 'package:burger_house/features/menu/ui/widgets/category_type_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CategoryListView extends StatefulWidget {
   const CategoryListView({super.key});
@@ -11,10 +13,11 @@ class CategoryListView extends StatefulWidget {
 class _CategoryListViewState extends State<CategoryListView> {
   int selectedInd = -1;
 
-  final List<String> categorysTypeList = [
+  final List<String> categorysName = [
     'beef burger',
     'chicken burger',
-    'the big',
+    'big',
+    'meals',
     'burger',
     'chicken & fries snadwich',
     'sauces',
@@ -34,20 +37,24 @@ class _CategoryListViewState extends State<CategoryListView> {
           physics: const BouncingScrollPhysics(),
           clipBehavior: Clip.none,
           scrollDirection: Axis.horizontal,
-          itemCount: categorysTypeList.length,
+          itemCount: categorysName.length,
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
                 if (selectedInd == index) {
+                  context.read<MenuCubit>().getProducts(catName: null);
                   selectedInd = -1;
                 } else {
+                  context.read<MenuCubit>().getProducts(
+                        catName: categorysName[index],
+                      );
                   selectedInd = index;
                 }
                 setState(() {});
               },
               child: CategoryTypeCard(
                 selected: selectedInd == index,
-                categoryName: categorysTypeList[index],
+                categoryName: categorysName[index],
               ),
             );
           },

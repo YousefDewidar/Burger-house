@@ -18,13 +18,14 @@ dependencies:
   firebase_core: ^3.2.0
   cloud_firestore: ^5.4.4
   firebase_storage:
-
   # UI tools
   carousel_slider:
   auto_size_text: ^3.0.0
   # Navigation
   page_transition: ^2.1.0
   skeletonizer: ^1.4.2
+  # state management
+  flutter_bloc: ^8.1.6
 
 dev_dependencies:
   flutter_lints: ^3.0.0

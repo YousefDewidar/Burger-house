@@ -1,56 +1,68 @@
-import 'package:burger_house/core/firebase/database.dart';
 import 'package:burger_house/features/menu/data/models/item_model.dart';
+import 'package:burger_house/features/menu/logic/cubit/menu_cubit.dart';
+import 'package:burger_house/features/menu/logic/cubit/menu_state.dart';
 import 'package:burger_house/features/menu/ui/widgets/product_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-class ProductsListView extends StatelessWidget {
+class ProductsListView extends StatefulWidget {
   const ProductsListView({
     super.key,
   });
 
   @override
+  State<ProductsListView> createState() => _ProductsListViewState();
+}
+
+class _ProductsListViewState extends State<ProductsListView> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<MenuCubit>().getProducts(catName: null);
+  }
+
+  @override
   Widget build(BuildContext context) {
     const List<ItemModel> dummyList = [
-      ItemModel(category: '', id: 0, name: '', price: {}),
-      ItemModel(category: '', id: 0, name: '', price: {}),
-      ItemModel(category: '', id: 0, name: '', price: {}),
-      ItemModel(category: '', id: 0, name: '', price: {}),
+      ItemModel(category: '', id: 0, name: '', price: {'s': 0, 'd': 0}),
+      ItemModel(category: '', id: 0, name: '', price: {'s': 0, 'd': 0}),
+      ItemModel(category: '', id: 0, name: '', price: {'s': 0, 'd': 0}),
+      ItemModel(category: '', id: 0, name: '', price: {'s': 0, 'd': 0}),
     ];
 
     return Expanded(
-      child: FutureBuilder(
-          future: Database.getProductsByCategory(category: 'beef burger'),
-          builder: (context, snap) {
-            if (snap.hasData) {
-              List<ItemModel> productsList = snap.data!;
-              return ListView.builder(
+      child: BlocBuilder<MenuCubit, MenuState>(
+        builder: (context, state) {
+          if (state is ProductSuccess) {
+            return ListView.builder(
+              padding: const EdgeInsets.only(top: 10),
+              physics: const BouncingScrollPhysics(),
+              itemCount: state.products.length,
+              itemBuilder: (context, index) {
+                return ProductCard(
+                  item: state.products[index],
+                );
+              },
+            );
+          } else if (state is ProductLoading) {
+            return Skeletonizer(
+              enabled: true,
+              child: ListView.builder(
                 padding: const EdgeInsets.only(top: 10),
-                physics: const BouncingScrollPhysics(),
-                itemCount: productsList.length,
+                itemCount: dummyList.length,
                 itemBuilder: (context, index) {
                   return ProductCard(
-                    item: productsList[index],
+                    item: dummyList[index],
                   );
                 },
-              );
-            } else if (snap.connectionState == ConnectionState.waiting) {
-              return Skeletonizer(
-                enabled: true,
-                child: ListView.builder(
-                  padding: const EdgeInsets.only(top: 10),
-                  itemCount: dummyList.length,
-                  itemBuilder: (context, index) {
-                    return ProductCard(
-                      item: dummyList[index],
-                    );
-                  },
-                ),
-              );
-            } else {
-              return const Center(child: Text('Error in get data'));
-            }
-          }),
+              ),
+            );
+          } else {
+            return const Center(child: Text('Error in get data'));
+          }
+        },
+      ),
     );
   }
 }
