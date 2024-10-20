@@ -22,7 +22,7 @@ class MenuView extends StatelessWidget {
               'Menu Sections'.toUpperCase(),
               style: const TextStyle(
                 color: Colors.black,
-                fontSize: 25,
+                fontSize: 23,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -30,10 +30,12 @@ class MenuView extends StatelessWidget {
             BlocBuilder<MenuCubit, MenuState>(
               builder: (context, state) {
                 return Text(
-                  BlocProvider.of<MenuCubit>(context).categoryName.toUpperCase(),
+                  BlocProvider.of<MenuCubit>(context)
+                      .categoryName
+                      .toUpperCase(),
                   style: const TextStyle(
                     color: Colors.black,
-                    fontSize: 25,
+                    fontSize: 23,
                     fontWeight: FontWeight.w600,
                   ),
                 );

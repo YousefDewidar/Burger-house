@@ -12,6 +12,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         backgroundColor: Constant.kBackgroundColor,
         toolbarHeight: 100,
@@ -24,9 +25,9 @@ class HomeView extends StatelessWidget {
           scrollDirection: Axis.vertical,
           children: const [
             SpaceV(10),
-            Text('Hot offers', style: Styles.style22),
+            Text('Hot offers 🔥', style: Styles.style22),
             OfferSliderListView(),
-            SpaceV(15),
+            SpaceV(5),
             // SearchTextField(),
             Text('Popular', style: Styles.style22),
             SpaceV(13),

@@ -1,3 +1,4 @@
+import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/utils/widgets/all_views_page_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +14,10 @@ class BurgerHouseApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(scaffoldBackgroundColor: Constant.kBackgroundColor),
       debugShowCheckedModeBanner: false,
-      home: AllViewsPageView(),
+      home: const AllViewsPageView(),
     );
   }
 }

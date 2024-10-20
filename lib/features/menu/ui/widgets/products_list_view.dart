@@ -16,6 +16,13 @@ class ProductsListView extends StatefulWidget {
 }
 
 class _ProductsListViewState extends State<ProductsListView> {
+  final List<ItemModel> dummyList = const [
+    ItemModel(category: '', id: 0, name: '', price: {'s': 0, 'd': 0}),
+    ItemModel(category: '', id: 0, name: '', price: {'s': 0, 'd': 0}),
+    ItemModel(category: '', id: 0, name: '', price: {'s': 0, 'd': 0}),
+    ItemModel(category: '', id: 0, name: '', price: {'s': 0, 'd': 0}),
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -24,13 +31,6 @@ class _ProductsListViewState extends State<ProductsListView> {
 
   @override
   Widget build(BuildContext context) {
-    const List<ItemModel> dummyList = [
-      ItemModel(category: '', id: 0, name: '', price: {'s': 0, 'd': 0}),
-      ItemModel(category: '', id: 0, name: '', price: {'s': 0, 'd': 0}),
-      ItemModel(category: '', id: 0, name: '', price: {'s': 0, 'd': 0}),
-      ItemModel(category: '', id: 0, name: '', price: {'s': 0, 'd': 0}),
-    ];
-
     return Expanded(
       child: BlocBuilder<MenuCubit, MenuState>(
         builder: (context, state) {

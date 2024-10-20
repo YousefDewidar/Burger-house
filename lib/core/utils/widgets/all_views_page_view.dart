@@ -17,7 +17,6 @@ class _AllViewsPageViewState extends State<AllViewsPageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Constant.kBackgroundColor,
       body: PageView(
         controller: pageCon,
         onPageChanged: (value) {
