@@ -5,8 +5,8 @@ import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/custom_chec
 import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/custom_divider.dart';
 import 'package:flutter/material.dart';
 
-class BottomSheetCard extends StatelessWidget {
-  const BottomSheetCard({
+class QuickAddItemCard extends StatelessWidget {
+  const QuickAddItemCard({
     super.key,
     required this.item,
   });
@@ -105,9 +105,19 @@ class BottomSheetCard extends StatelessWidget {
               ),
             ],
           ),
-          CustomCheckBox(lable: 'سبايسي', price: item.price),
+          CustomCheckBox(
+            lable: 'سبايسي',
+            price: item.price,
+            color: const Color.fromARGB(233, 255, 255, 255),
+          ),
           const CustomDivider(),
-          CustomCheckBox(lable: 'دابل', price: item.price),
+          item.price['s'] != null
+              ? CustomCheckBox(
+                  lable: 'دابل',
+                  price: item.price,
+                  color: const Color.fromARGB(233, 255, 255, 255),
+                )
+              : const SizedBox(),
           const CustomDivider(),
           const Spacer(),
           AddToCartButton(price: item.price),

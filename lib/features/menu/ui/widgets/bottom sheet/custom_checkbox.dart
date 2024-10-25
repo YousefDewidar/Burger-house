@@ -1,13 +1,16 @@
+import 'package:burger_house/features/menu/logic/cubits/bottom%20sheet%20cubit/bottom_sheet_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomCheckBox extends StatefulWidget {
   final String lable;
+  final Color color;
   final Map price;
 
   const CustomCheckBox({
     super.key,
     required this.lable,
-    required this.price,
+    required this.price, required this.color,
   });
 
   @override
@@ -20,12 +23,23 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (curVal ?? false) {
-          curVal = false;
+        if (widget.lable == 'دابل') {
+          if (curVal ?? false) {
+            curVal = false;
+            BlocProvider.of<BottomSheetCubit>(context).setNeedDouble(false);
+          } else {
+            BlocProvider.of<BottomSheetCubit>(context).setNeedDouble(true);
+            curVal = true;
+          }
+          setState(() {});
         } else {
-          curVal = true;
+          if (curVal ?? false) {
+            curVal = false;
+          } else {
+            curVal = true;
+          }
+          setState(() {});
         }
-        setState(() {});
       },
       child: Container(
         color: Colors.transparent,
@@ -35,14 +49,24 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
             Checkbox(
               value: curVal,
               onChanged: (v) {
+                if (widget.lable == 'دابل') {
+                  if (curVal ?? false) {
+                    BlocProvider.of<BottomSheetCubit>(context)
+                        .setNeedDouble(false);
+                  } else {
+                    BlocProvider.of<BottomSheetCubit>(context)
+                        .setNeedDouble(true);
+                  }
+                  setState(() {});
+                }
                 curVal = v;
                 setState(() {});
               },
             ),
             Text(
               widget.lable,
-              style: const TextStyle(
-                  color: Color.fromARGB(233, 255, 255, 255), fontSize: 20),
+              style:  TextStyle(
+                  color: widget.color, fontSize: 20),
             ),
           ],
         ),

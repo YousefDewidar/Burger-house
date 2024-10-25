@@ -3,4 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BottomSheetCubit extends Cubit<BottomSheetState> {
   BottomSheetCubit() : super(BottomSheetInitial());
+  bool needDouble = false;
+  setNeedDouble(bool need) {
+    needDouble = need;
+    emit(NeedDoubleState());
+  }
 }

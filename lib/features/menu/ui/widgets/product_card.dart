@@ -2,9 +2,11 @@ import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/utils/widgets/space.dart';
 import 'package:burger_house/features/menu/data/models/item_model.dart';
 import 'package:burger_house/features/menu/logic/cubits/bottom%20sheet%20cubit/bottom_sheet_cubit.dart';
-import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/bottom_sheet_card.dart';
+import 'package:burger_house/features/menu/ui/item_details_view.dart';
+import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/quick_add_item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.item});
@@ -14,6 +16,15 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        Navigator.push(
+          context,
+          PageTransition(
+            child: ItemDetailsView(item: item),
+            type: PageTransitionType.rightToLeft,
+          ),
+        );
+      },
+      onLongPress: () {
         showModalBottomSheet(
           backgroundColor: const Color(0xFF141414),
           showDragHandle: true,
@@ -21,7 +32,7 @@ class ProductCard extends StatelessWidget {
           builder: (context) {
             return BlocProvider(
               create: (context) => BottomSheetCubit(),
-              child: BottomSheetCard(item: item),
+              child: QuickAddItemCard(item: item),
             );
           },
         );
@@ -39,10 +50,13 @@ class ProductCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(
-              'assets/images/burger_sandwich 1.png',
-              height: 130,
-              width: 130,
+            Hero(
+              tag: item.img ?? 'focla',
+              child: Image.asset(
+                'assets/images/burger_sandwich 1.png',
+                height: 130,
+                width: 130,
+              ),
             ),
             const Spacer(),
             Column(
