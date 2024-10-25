@@ -1,6 +1,8 @@
-import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/utils/widgets/space.dart';
 import 'package:burger_house/features/menu/data/models/item_model.dart';
+import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/add_to_cart_button.dart';
+import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/custom_checkbox.dart';
+import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/custom_divider.dart';
 import 'package:flutter/material.dart';
 
 class BottomSheetCard extends StatelessWidget {
@@ -111,115 +113,6 @@ class BottomSheetCard extends StatelessWidget {
           AddToCartButton(price: item.price),
           const SizedBox(height: 20),
         ],
-      ),
-    );
-  }
-}
-
-class AddToCartButton extends StatelessWidget {
-  final Map price;
-  const AddToCartButton({
-    super.key,
-    required this.price,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: Constant.kPrimaryColor.withOpacity(.9),
-      ),
-      child: const Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            '${400} ج.م',
-            textDirection: TextDirection.rtl,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-            ),
-          ),
-          Text(
-            ' اضف الي السلة',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class CustomDivider extends StatelessWidget {
-  const CustomDivider({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return const Divider(
-      color: Color.fromARGB(99, 133, 133, 133),
-      endIndent: 50,
-      indent: 50,
-      height: 0,
-    );
-  }
-}
-
-class CustomCheckBox extends StatefulWidget {
-  final String lable;
-  final Map price;
-
-  const CustomCheckBox({
-    super.key,
-    required this.lable,
-    required this.price,
-  });
-
-  @override
-  State<CustomCheckBox> createState() => _CustomCheckBoxState();
-}
-
-class _CustomCheckBoxState extends State<CustomCheckBox> {
-  bool? curVal = false;
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        if (curVal ?? false) {
-          curVal = false;
-        } else {
-          curVal = true;
-        }
-        setState(() {});
-      },
-      child: Container(
-        color: Colors.transparent,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Checkbox(
-              value: curVal,
-              onChanged: (v) {
-                curVal = v;
-                setState(() {});
-              },
-            ),
-            Text(
-              widget.lable,
-              style: const TextStyle(
-                  color: Color.fromARGB(233, 255, 255, 255), fontSize: 20),
-            ),
-          ],
-        ),
       ),
     );
   }

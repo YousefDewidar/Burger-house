@@ -1,8 +1,10 @@
 import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/utils/widgets/space.dart';
 import 'package:burger_house/features/menu/data/models/item_model.dart';
-import 'package:burger_house/features/menu/ui/widgets/bottom_sheet_card.dart';
+import 'package:burger_house/features/menu/logic/cubits/bottom%20sheet%20cubit/bottom_sheet_cubit.dart';
+import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/bottom_sheet_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.item});
@@ -17,7 +19,10 @@ class ProductCard extends StatelessWidget {
           showDragHandle: true,
           context: context,
           builder: (context) {
-            return BottomSheetCard(item: item);
+            return BlocProvider(
+              create: (context) => BottomSheetCubit(),
+              child: BottomSheetCard(item: item),
+            );
           },
         );
       },
@@ -117,5 +122,3 @@ class ProductCard extends StatelessWidget {
     );
   }
 }
-
-

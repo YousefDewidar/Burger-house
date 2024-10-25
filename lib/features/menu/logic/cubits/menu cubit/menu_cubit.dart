@@ -1,6 +1,6 @@
 import 'package:burger_house/features/menu/data/models/item_model.dart';
 import 'package:burger_house/features/menu/data/repos/menu_repo.dart';
-import 'package:burger_house/features/menu/logic/cubit/menu_state.dart';
+import 'package:burger_house/features/menu/logic/cubits/menu%20cubit/menu_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MenuCubit extends Cubit<MenuState> {
