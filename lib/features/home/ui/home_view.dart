@@ -12,10 +12,9 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
         backgroundColor: Constant.kBackgroundColor,
-        toolbarHeight: 100,
+        // toolbarHeight: MediaQuery.of(context).size.height*.1,
         title: const HelloRow(),
       ),
       body: Padding(

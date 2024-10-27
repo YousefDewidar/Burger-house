@@ -21,9 +21,12 @@ dependencies:
   # UI tools
   carousel_slider:
   auto_size_text: ^3.0.0
+  flashy_tab_bar2:
+  skeletonizer: ^1.4.2
+  font_awesome_flutter: ^10.7.0
+
   # Navigation
   page_transition: ^2.1.0
-  skeletonizer: ^1.4.2
   # state management
   flutter_bloc: ^8.1.6
 

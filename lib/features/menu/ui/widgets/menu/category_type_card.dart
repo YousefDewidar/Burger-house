@@ -33,7 +33,7 @@ class CategoryTypeCard extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: selected
-                  ? const Color.fromARGB(255, 234, 232, 232)
+                  ? const Color.fromARGB(255, 252, 252, 252)
                   : Colors.black,
               fontWeight: FontWeight.w600,
               fontSize: 14,
