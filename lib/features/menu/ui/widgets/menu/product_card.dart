@@ -81,8 +81,9 @@ class ProductCard extends StatelessWidget {
                     textDirection: TextDirection.rtl,
                     maxLines: 3,
                     style: const TextStyle(
-                        color: Color.fromARGB(255, 115, 115, 115),
-                        fontSize: 12),
+                      color: Color.fromARGB(255, 115, 115, 115),
+                      fontSize: 13,
+                    ),
                   ),
                 ),
                 const Spacer(),

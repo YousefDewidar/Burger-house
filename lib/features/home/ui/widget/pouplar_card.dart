@@ -18,7 +18,7 @@ class PopularCard extends StatelessWidget {
         children: [
           Image.asset('assets/images/burger_sandwich 1.png', scale: 2.5),
           const Text('Beef Burger',
-              style: TextStyle(color: Colors.black, fontSize: 18,height: 2.5)),
+              style: TextStyle(color: Colors.black, fontSize: 18, height: 2.5)),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 27.0),
             child: AddItemWithPriceRow(),

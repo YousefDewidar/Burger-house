@@ -18,7 +18,10 @@ class ItemInfo extends StatelessWidget {
             // title
             Text(
               item.name,
-              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+              style: const TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+              ),
             ),
             const SizedBox(height: 10),
 
@@ -39,10 +42,11 @@ class ItemInfo extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SpaceV(10),
 
             // prices
             Row(
+              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 item.price['s'] == null
                     ? const SizedBox(width: 0)
@@ -82,7 +86,8 @@ class ItemInfo extends StatelessWidget {
                       fontWeight: FontWeight.w600),
                 ),
               ],
-            )
+            ),
+            const SpaceV(10),
           ],
         ),
       ],

@@ -17,7 +17,7 @@ class BurgerHouseApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(scaffoldBackgroundColor: Constant.kBackgroundColor),
+      theme: ThemeData(scaffoldBackgroundColor: Constant.kBackgroundColor,fontFamily: 'Cairo'),
       debugShowCheckedModeBanner: false,
       home: const AllViewsPageView(),
     );
