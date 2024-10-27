@@ -8,12 +8,12 @@ class MenuCubit extends Cubit<MenuState> {
 
   static final MenuRepo _menuRepo = MenuRepo();
 
-  String categoryName = 'All Menu';
+  String categoryName = 'all menu';
 
-  void getProducts({required String? catName}) async {
+  void getProducts({required String catName}) async {
     emit(ProductLoading());
     try {
-      categoryName = catName ?? 'All Menu';
+      categoryName = catName;
       List<ItemModel> products = await _menuRepo.setCategory(catName: catName);
       emit(ProductSuccess(products));
     } catch (e) {

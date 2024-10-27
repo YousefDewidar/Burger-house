@@ -17,7 +17,7 @@ class MenuView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           children: [
-            const SpaceV(50),
+            SpaceV(MediaQuery.of(context).size.height * .07),
             Text(
               'Menu Sections'.toUpperCase(),
               style: const TextStyle(

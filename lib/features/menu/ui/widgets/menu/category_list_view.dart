@@ -11,9 +11,10 @@ class CategoryListView extends StatefulWidget {
 }
 
 class _CategoryListViewState extends State<CategoryListView> {
-  int selectedInd = -1;
+  int selectedInd = 0;
 
   final List<String> categorysName = [
+    'all menu',
     'beef burger',
     'chicken burger',
     'big',
@@ -42,8 +43,8 @@ class _CategoryListViewState extends State<CategoryListView> {
             return GestureDetector(
               onTap: () {
                 if (selectedInd == index) {
-                  context.read<MenuCubit>().getProducts(catName: null);
-                  selectedInd = -1;
+                  context.read<MenuCubit>().getProducts(catName: 'all menu');
+                  selectedInd = 0;
                 } else {
                   context.read<MenuCubit>().getProducts(
                         catName: categorysName[index],

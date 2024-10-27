@@ -26,7 +26,7 @@ class _ProductsListViewState extends State<ProductsListView> {
   @override
   void initState() {
     super.initState();
-    context.read<MenuCubit>().getProducts(catName: null);
+    context.read<MenuCubit>().getProducts(catName: 'all menu');
   }
 
   @override
