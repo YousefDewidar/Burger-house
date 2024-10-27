@@ -5,6 +5,21 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class Database {
   static final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
+  static Future<void> addUser({
+    required String name,
+    required String email,
+    required String number,
+    required String location,
+  }) async {
+    await _firestore.collection('users').add({
+      "name": name,
+      "num": number,
+      "email": email,
+      "created_at": DateTime.now(),
+      'location': location,
+    });
+  }
+
 // add items
   static Future<void> addItem({
     required String collectionName,

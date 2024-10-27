@@ -13,6 +13,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Constant.kBackgroundColor,
         // toolbarHeight: MediaQuery.of(context).size.height*.1,
         title: const HelloRow(),

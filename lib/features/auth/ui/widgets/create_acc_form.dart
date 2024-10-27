@@ -1,3 +1,4 @@
+import 'package:burger_house/core/firebase/database.dart';
 import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/core/helper/functions.dart';
 import 'package:burger_house/core/utils/widgets/password_field.dart';
@@ -70,7 +71,14 @@ class _CreateAccFormState extends State<CreateAccForm> {
       try {
         await register(emailCon, passwordCon);
         HelperFun().showAwesomeDialog(context, 'CreatedDone');
-        // Navigator.pop(context);
+        Database.addUser(
+          email: emailCon.text,
+          name: nameCon.text,
+          // بعدين هخلي المسخدم يدخل موقعه ورقمه
+          location: 'Fixed location',
+          number: 'number',
+        );
+        Navigator.pop(context);
       } on FirebaseAuthException catch (e) {
         HelperFun().handleAuthErrors(e, context);
       }
