@@ -4,6 +4,8 @@ import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/add_to_cart
 import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/custom_checkbox.dart';
 import 'package:flutter/material.dart';
 
+// bottom sheet for quick add
+
 class QuickAddItemCard extends StatelessWidget {
   const QuickAddItemCard({
     super.key,

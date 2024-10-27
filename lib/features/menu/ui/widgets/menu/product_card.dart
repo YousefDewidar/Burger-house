@@ -3,7 +3,7 @@ import 'package:burger_house/core/utils/widgets/space.dart';
 import 'package:burger_house/features/menu/data/models/item_model.dart';
 import 'package:burger_house/features/menu/logic/cubits/bottom%20sheet%20cubit/bottom_sheet_cubit.dart';
 import 'package:burger_house/features/menu/ui/item_details_view.dart';
-import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/quick_add_item_card.dart';
+import 'package:burger_house/features/menu/ui/quick_add_item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:page_transition/page_transition.dart';

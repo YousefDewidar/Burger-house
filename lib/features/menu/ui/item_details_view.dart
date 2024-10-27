@@ -1,9 +1,9 @@
 import 'package:burger_house/core/utils/constant.dart';
 import 'package:burger_house/features/menu/data/models/item_model.dart';
 import 'package:burger_house/features/menu/logic/cubits/details%20cubit/details_cubit.dart';
-import 'package:burger_house/features/menu/ui/details%20view/add_to_cart.dart';
-import 'package:burger_house/features/menu/ui/details%20view/custom_checkbox_for_details.dart';
-import 'package:burger_house/features/menu/ui/item_info.dart';
+import 'package:burger_house/features/menu/ui/widgets/details%20view/add_to_cart.dart';
+import 'package:burger_house/features/menu/ui/widgets/details%20view/custom_checkbox_for_details.dart';
+import 'package:burger_house/features/menu/ui/widgets/details%20view/item_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

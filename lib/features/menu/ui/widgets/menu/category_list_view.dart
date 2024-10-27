@@ -1,5 +1,5 @@
 import 'package:burger_house/features/menu/logic/cubits/menu%20cubit/menu_cubit.dart';
-import 'package:burger_house/features/menu/ui/widgets/category_type_card.dart';
+import 'package:burger_house/features/menu/ui/widgets/menu/category_type_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

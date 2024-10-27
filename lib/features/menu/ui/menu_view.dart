@@ -1,8 +1,8 @@
 import 'package:burger_house/core/utils/widgets/space.dart';
 import 'package:burger_house/features/menu/logic/cubits/menu%20cubit/menu_cubit.dart';
 import 'package:burger_house/features/menu/logic/cubits/menu%20cubit/menu_state.dart';
-import 'package:burger_house/features/menu/ui/widgets/category_list_view.dart';
-import 'package:burger_house/features/menu/ui/widgets/products_list_view.dart';
+import 'package:burger_house/features/menu/ui/widgets/menu/category_list_view.dart';
+import 'package:burger_house/features/menu/ui/widgets/menu/products_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

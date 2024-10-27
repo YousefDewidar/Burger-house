@@ -18,7 +18,7 @@ class AddToCart extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: Constant.kPrimaryColor.withOpacity(.9),
+        color: Constant.kPrimaryColor,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
