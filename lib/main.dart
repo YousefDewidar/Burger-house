@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 // هعمل cubit ل details و هعمل buutom جديد للصفحه دي و ui ازود counter , شوية اضافات
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

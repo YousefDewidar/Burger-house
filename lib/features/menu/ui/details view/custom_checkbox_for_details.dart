@@ -1,14 +1,14 @@
-import 'package:burger_house/features/menu/logic/cubits/bottom%20sheet%20cubit/bottom_sheet_cubit.dart';
+import 'package:burger_house/features/menu/logic/cubits/details%20cubit/details_cubit.dart';
 import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/custom_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CustomCheckBox extends StatefulWidget {
+class CustomCheckboxForDetails extends StatefulWidget {
   final String lable;
   final Color color;
   final Map price;
 
-  const CustomCheckBox({
+  const CustomCheckboxForDetails({
     super.key,
     required this.lable,
     required this.price,
@@ -16,10 +16,11 @@ class CustomCheckBox extends StatefulWidget {
   });
 
   @override
-  State<CustomCheckBox> createState() => _CustomCheckBoxState();
+  State<CustomCheckboxForDetails> createState() =>
+      _CustomCheckboxForDetailsState();
 }
 
-class _CustomCheckBoxState extends State<CustomCheckBox> {
+class _CustomCheckboxForDetailsState extends State<CustomCheckboxForDetails> {
   bool? curVal = false;
   @override
   Widget build(BuildContext context) {
@@ -30,9 +31,9 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
             if (widget.lable == 'دابل') {
               if (curVal ?? false) {
                 curVal = false;
-                BlocProvider.of<BottomSheetCubit>(context).setNeedDouble(false);
+                BlocProvider.of<DetailsCubit>(context).setNeedDouble(false);
               } else {
-                BlocProvider.of<BottomSheetCubit>(context).setNeedDouble(true);
+                BlocProvider.of<DetailsCubit>(context).setNeedDouble(true);
                 curVal = true;
               }
               setState(() {});
@@ -55,10 +56,10 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
                   onChanged: (v) {
                     if (widget.lable == 'دابل') {
                       if (curVal ?? false) {
-                        BlocProvider.of<BottomSheetCubit>(context)
+                        BlocProvider.of<DetailsCubit>(context)
                             .setNeedDouble(false);
                       } else {
-                        BlocProvider.of<BottomSheetCubit>(context)
+                        BlocProvider.of<DetailsCubit>(context)
                             .setNeedDouble(true);
                       }
                       setState(() {});

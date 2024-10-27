@@ -2,7 +2,6 @@ import 'package:burger_house/core/utils/widgets/space.dart';
 import 'package:burger_house/features/menu/data/models/item_model.dart';
 import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/add_to_cart_button.dart';
 import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/custom_checkbox.dart';
-import 'package:burger_house/features/menu/ui/widgets/bottom%20sheet/custom_divider.dart';
 import 'package:flutter/material.dart';
 
 class QuickAddItemCard extends StatelessWidget {
@@ -105,12 +104,13 @@ class QuickAddItemCard extends StatelessWidget {
               ),
             ],
           ),
-          CustomCheckBox(
-            lable: 'سبايسي',
-            price: item.price,
-            color: const Color.fromARGB(233, 255, 255, 255),
-          ),
-          const CustomDivider(),
+          item.spicy!
+              ? CustomCheckBox(
+                  lable: 'سبايسي',
+                  price: item.price,
+                  color: const Color.fromARGB(233, 255, 255, 255),
+                )
+              : const SizedBox(),
           item.price['s'] != null
               ? CustomCheckBox(
                   lable: 'دابل',
@@ -118,7 +118,6 @@ class QuickAddItemCard extends StatelessWidget {
                   color: const Color.fromARGB(233, 255, 255, 255),
                 )
               : const SizedBox(),
-          const CustomDivider(),
           const Spacer(),
           AddToCartButton(price: item.price),
           const SizedBox(height: 20),
