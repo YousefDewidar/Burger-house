@@ -1,17 +1,19 @@
+import 'package:burger_house/core/utils/constant.dart';
+import 'package:flutter/material.dart';
 import 'package:burger_house/core/utils/widgets/all_views_page_view.dart';
 import 'package:burger_house/features/auth/ui/login_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
+
 import 'package:page_transition/page_transition.dart';
 
-class SplashViewBody extends StatefulWidget {
-  const SplashViewBody({super.key});
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
 
   @override
-  State<SplashViewBody> createState() => _SplashViewBodyState();
+  State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody>
+class _SplashViewState extends State<SplashView>
     with SingleTickerProviderStateMixin {
   late Animation<double> animation;
   late AnimationController animationController;
@@ -56,13 +58,16 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: FadeTransition(
-        opacity: animation,
-        child: Image.asset(
-          'assets/images/icon_ff.png',
-          color: Colors.white,
-          scale: 4.5,
+    return Scaffold(
+      backgroundColor: Constant.kPrimaryColor,
+      body: Center(
+        child: FadeTransition(
+          opacity: animation,
+          child: Image.asset(
+            'assets/images/icon_ff.png',
+            color: Colors.white,
+            scale: 4.5,
+          ),
         ),
       ),
     );

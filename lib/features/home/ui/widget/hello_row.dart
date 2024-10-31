@@ -14,20 +14,6 @@ class HelloRow extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //   children: [
-        //     Text('Hello',
-        //         style: Styles.style22
-        //             .copyWith(fontSize: 34, fontWeight: FontWeight.w600)),
-        //     IconButton(
-        //         onPressed: () {
-        //           FirebaseAuth.instance.signOut();
-        //         },
-        //         icon: const Icon(Icons.sports_handball_outlined))
-        //   ],
-        // ),
-        // // const SpaceV(10),
         Row(
           children: [
             const Icon(
@@ -56,7 +42,6 @@ class HelloRow extends StatelessWidget {
                         color: Constant.kPrimaryColor.withOpacity(.7))))
           ],
         ),
-
         const SpaceV(8),
         const Divider(
             height: 0, color: Color(0xFFD7D7D7), endIndent: 70, indent: 70),
