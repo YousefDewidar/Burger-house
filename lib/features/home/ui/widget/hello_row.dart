@@ -43,8 +43,8 @@ class HelloRow extends StatelessWidget {
           ],
         ),
         const SpaceV(8),
-        const Divider(
-            height: 0, color: Color(0xFFD7D7D7), endIndent: 70, indent: 70),
+        // const Divider(
+        //     height: 0, color: Color(0xFFD7D7D7), endIndent: 70, indent: 70),
       ],
     );
   }

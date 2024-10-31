@@ -1,5 +1,4 @@
-import 'package:burger_house/core/utils/constant.dart';
-import 'package:burger_house/features/splash/splash_view.dart';
+import 'package:burger_house/core/utils/widgets/all_views_page_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -17,11 +16,11 @@ class BurgerHouseApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        scaffoldBackgroundColor: Constant.kBackgroundColor,
+        scaffoldBackgroundColor: const Color.fromARGB(255, 240, 240, 240),
         fontFamily: 'Cairo',
       ),
       debugShowCheckedModeBanner: false,
-      home: const SplashView(),
+      home: const AllViewsPageView(),
     );
   }
 }

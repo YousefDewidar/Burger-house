@@ -14,8 +14,8 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Constant.kBackgroundColor,
-        // toolbarHeight: MediaQuery.of(context).size.height*.1,
+        backgroundColor: Constant.kPrimaryColor.withOpacity(0.1),
+        scrolledUnderElevation: 0,
         title: const HelloRow(),
       ),
       body: Padding(

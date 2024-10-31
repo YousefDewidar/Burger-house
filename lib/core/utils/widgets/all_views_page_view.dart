@@ -1,4 +1,5 @@
 import 'package:burger_house/core/utils/constant.dart';
+import 'package:burger_house/features/cart/ui/cart_view.dart';
 import 'package:burger_house/features/home/ui/home_view.dart';
 import 'package:burger_house/features/menu/ui/menu_view.dart';
 import 'package:burger_house/features/profile/ui/view/profile_view.dart';
@@ -18,7 +19,7 @@ class _AllViewsPageViewState extends State<AllViewsPageView> {
   List<Widget> pages = [
     const HomeView(),
     const MenuView(),
-    const ProfileView(),
+    const CartView(),
     const ProfileView()
   ];
 

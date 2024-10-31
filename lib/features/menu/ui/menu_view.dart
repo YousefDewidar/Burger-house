@@ -1,4 +1,3 @@
-import 'package:burger_house/core/utils/widgets/space.dart';
 import 'package:burger_house/features/menu/logic/cubits/menu%20cubit/menu_cubit.dart';
 import 'package:burger_house/features/menu/logic/cubits/menu%20cubit/menu_state.dart';
 import 'package:burger_house/features/menu/ui/widgets/menu/category_list_view.dart';
@@ -11,38 +10,39 @@ class MenuView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => MenuCubit(),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
-          children: [
-            SpaceV(MediaQuery.of(context).size.height * .07),
-            Text(
-              'Menu Sections'.toUpperCase(),
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 23,
-                fontWeight: FontWeight.w600,
+    return SafeArea(
+      child: BlocProvider(
+        create: (context) => MenuCubit(),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            children: [
+              Text(
+                'Menu Sections'.toUpperCase(),
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 23,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-            ),
-            const CategoryListView(),
-            BlocBuilder<MenuCubit, MenuState>(
-              builder: (context, state) {
-                return Text(
-                  BlocProvider.of<MenuCubit>(context)
-                      .categoryName
-                      .toUpperCase(),
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 23,
-                    fontWeight: FontWeight.w600,
-                  ),
-                );
-              },
-            ),
-            const ProductsListView(),
-          ],
+              const CategoryListView(),
+              BlocBuilder<MenuCubit, MenuState>(
+                builder: (context, state) {
+                  return Text(
+                    BlocProvider.of<MenuCubit>(context)
+                        .categoryName
+                        .toUpperCase(),
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 23,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  );
+                },
+              ),
+              const ProductsListView(),
+            ],
+          ),
         ),
       ),
     );
