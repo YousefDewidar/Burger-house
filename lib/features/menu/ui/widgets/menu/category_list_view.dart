@@ -20,7 +20,7 @@ class _CategoryListViewState extends State<CategoryListView> {
     'big',
     'meals',
     'burger',
-    'chicken & fries snadwich',
+    'chicken & fries sandwich',
     'sauces',
     'dessert',
     'milk shake',

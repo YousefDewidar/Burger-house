@@ -63,10 +63,13 @@ class ProductCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 // title
-                Text(
-                  item.name,
-                  textDirection: TextDirection.rtl,
-                  style: const TextStyle(color: Colors.black, fontSize: 18),
+                SizedBox(
+                  width: 200,
+                  child: Text(
+                    item.name,
+                    textDirection: TextDirection.rtl,
+                    style: const TextStyle(color: Colors.black, fontSize: 18),
+                  ),
                 ),
                 // ingredients
                 SizedBox(
@@ -80,6 +83,7 @@ class ProductCard extends StatelessWidget {
                         '',
                     textDirection: TextDirection.rtl,
                     maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                       color: Color.fromARGB(255, 115, 115, 115),
                       fontSize: 13,

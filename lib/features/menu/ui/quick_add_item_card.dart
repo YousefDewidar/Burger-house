@@ -33,12 +33,15 @@ class QuickAddItemCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   // title
-                  Text(
-                    item.name,
-                    textDirection: TextDirection.rtl,
-                    style: const TextStyle(
-                        color: Color.fromARGB(233, 255, 255, 255),
-                        fontSize: 20),
+                  SizedBox(
+                    width: 170,
+                    child: Text(
+                      item.name,
+                      textDirection: TextDirection.rtl,
+                      style: const TextStyle(
+                          color: Color.fromARGB(233, 255, 255, 255),
+                          fontSize: 20),
+                    ),
                   ),
                   // ingredients
                   SizedBox(
